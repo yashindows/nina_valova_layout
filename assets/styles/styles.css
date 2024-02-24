@@ -226,7 +226,7 @@ body.lock {
 
 .footer .container {
   text-align: center;
-  padding-block: 40px 75px;
+  padding-block: 40px;
   position: relative;
 }
 
@@ -378,6 +378,14 @@ dialog {
   transition: 0.1s;
 }
 
+.contacts-close{
+  display: none;
+}
+
+.contacts-close i{
+  pointer-events: none;
+}
+
 .contacts-media a:hover {
   filter: brightness(0.9);
 }
@@ -453,6 +461,50 @@ form {
 .guide-text li {
   list-style: disc;
   margin-left: 35px;
+}
+@media (max-height: 786px) or (max-width: 1240px) {
+  .contacts-card{
+    transition: .1s;
+    width: 455px;
+    top: 15%;
+    left: 5%;
+    font-size: 18px;
+    padding: 20px 30px 20px;
+  }
+  .contacts-title{
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  .contacts-info{
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-height: 585px) or (max-width: 768px){
+  .contacts-card{
+    width: 100%;
+    height: 70%;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -90%;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px 60px;
+  }
+  .contacts-card.active{
+    left: 0;
+  }
+  .contacts-card.active .contacts-close{
+    display: var(--fa-display, inline-block);
+  }
+  .contacts-title{
+    font-size: 16px;
+  }
+  .contacts-title, .contacts-info{
+    margin: 0;
+  }
 }
 
 @media (max-width: 1240px) {
@@ -722,6 +774,9 @@ form {
   }
   .footer-logo {
     width: 75px;
+  }
+  .contacts-media a{
+    max-width: 35px;
   }
 }
 
